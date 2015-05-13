@@ -124,6 +124,9 @@ class ViewController: NSViewController {
         mountItem = items[4]
         saveItem = items[6]
         
+        doc?.mountItem = mountItem
+        doc?.saveItem = saveItem
+        
         addItem!.action = "addButton:"
         removeItem!.action = "removeButton:"
         extractItem!.action = "extractButton:"

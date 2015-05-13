@@ -29,6 +29,8 @@ struct Entry {
 class Document: NSDocument, NSTableViewDataSource {
     
     var entries: [Entry] = []
+    var saveItem: NSToolbarItem? = nil
+    var mountItem: NSToolbarItem? = nil
 
     override init() {
         super.init()
@@ -116,4 +118,20 @@ class Document: NSDocument, NSTableViewDataSource {
         
         return nil
     }
+    
+    func tableView(tableView: NSTableView, setObjectValue object: AnyObject?, forTableColumn tableColumn: NSTableColumn?, row: Int) {
+        if "name" == tableColumn?.identifier {
+            let o = entries[row]
+            entries[row] = Entry(filename: object as! String, data: o.data, size: o.size)
+        }
+        
+        if let item = saveItem {
+            item.action = "saveButton:"
+            
+            if let i2 = mountItem {
+                i2.action = nil
+            }
+        }
+    }
+    
 }
