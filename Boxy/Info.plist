@@ -2,6 +2,34 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeIconFile</key>
+			<string>filetypeicon.icns</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.aluxian.boxy</string>
+			<key>UTTypeReferenceURL</key>
+			<string>http://boxy.aluxian.com/UTRef</string>
+			<key>UTTypeDescription</key>
+			<string>Box Image</string>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<string>BOX</string>
+				<key>public.filename-extension</key>
+				<array>
+					<string>boxy</string>
+				</array>
+				<key>public.mime-type</key>
+				<string>application/x-box</string>
+			</dict>
+		</dict>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDocumentTypes</key>
@@ -9,15 +37,15 @@
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
-				<string>box</string>
+				<string>boxy</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string></string>
+			<string>filetypeicon.icns</string>
 			<key>CFBundleTypeName</key>
-			<string>DocumentType</string>
+			<string>Box Image</string>
 			<key>CFBundleTypeOSTypes</key>
 			<array>
-				<string>????</string>
+				<string>com.aluxian.boxy</string>
 			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>

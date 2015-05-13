@@ -13,6 +13,7 @@
 		7960AFA41B033D83006928C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7960AFA31B033D83006928C7 /* Images.xcassets */; };
 		7960AFA71B033D83006928C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7960AFA51B033D83006928C7 /* Main.storyboard */; };
 		7960AFB31B033D83006928C7 /* BoxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960AFB21B033D83006928C7 /* BoxyTests.swift */; };
+		7960AFBD1B033EAF006928C7 /* filetypeicon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7960AFBC1B033EAF006928C7 /* filetypeicon.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		7960AFAC1B033D83006928C7 /* BoxyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoxyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7960AFB11B033D83006928C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7960AFB21B033D83006928C7 /* BoxyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxyTests.swift; sourceTree = "<group>"; };
+		7960AFBC1B033EAF006928C7 /* filetypeicon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = filetypeicon.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		7960AF9A1B033D83006928C7 /* Boxy */ = {
 			isa = PBXGroup;
 			children = (
+				7960AFBE1B033EB3006928C7 /* Assets */,
 				7960AF9D1B033D83006928C7 /* AppDelegate.swift */,
 				7960AF9F1B033D83006928C7 /* ViewController.swift */,
 				7960AFA11B033D83006928C7 /* Document.swift */,
@@ -110,6 +113,14 @@
 				7960AFB11B033D83006928C7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7960AFBE1B033EB3006928C7 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7960AFBC1B033EAF006928C7 /* filetypeicon.icns */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +205,7 @@
 			files = (
 				7960AFA41B033D83006928C7 /* Images.xcassets in Resources */,
 				7960AFA71B033D83006928C7 /* Main.storyboard in Resources */,
+				7960AFBD1B033EAF006928C7 /* filetypeicon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
