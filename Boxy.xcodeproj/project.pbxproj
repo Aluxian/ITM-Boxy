@@ -11,6 +11,7 @@
 		79305AF81B0394F900C9AA87 /* del.png in Resources */ = {isa = PBXBuildFile; fileRef = 79305AF51B0394F900C9AA87 /* del.png */; };
 		79305AF91B0394F900C9AA87 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 79305AF61B0394F900C9AA87 /* save.png */; };
 		79305AFB1B0397B400C9AA87 /* mount.png in Resources */ = {isa = PBXBuildFile; fileRef = 79305AFA1B0397B400C9AA87 /* mount.png */; };
+		79305AFD1B03A41200C9AA87 /* extract.png in Resources */ = {isa = PBXBuildFile; fileRef = 79305AFC1B03A41200C9AA87 /* extract.png */; };
 		7960AF9E1B033D83006928C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960AF9D1B033D83006928C7 /* AppDelegate.swift */; };
 		7960AFA01B033D83006928C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960AF9F1B033D83006928C7 /* ViewController.swift */; };
 		7960AFA41B033D83006928C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7960AFA31B033D83006928C7 /* Images.xcassets */; };
@@ -39,6 +40,7 @@
 		79305AF51B0394F900C9AA87 /* del.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = del.png; sourceTree = "<group>"; };
 		79305AF61B0394F900C9AA87 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
 		79305AFA1B0397B400C9AA87 /* mount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mount.png; sourceTree = "<group>"; };
+		79305AFC1B03A41200C9AA87 /* extract.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = extract.png; sourceTree = "<group>"; };
 		7960AF981B033D83006928C7 /* Boxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7960AF9C1B033D83006928C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7960AF9D1B033D83006928C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				79305AFA1B0397B400C9AA87 /* mount.png */,
+				79305AFC1B03A41200C9AA87 /* extract.png */,
 				79305AF41B0394F900C9AA87 /* add.png */,
 				79305AF51B0394F900C9AA87 /* del.png */,
 				79305AF61B0394F900C9AA87 /* save.png */,
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7960AFA41B033D83006928C7 /* Images.xcassets in Resources */,
+				79305AFD1B03A41200C9AA87 /* extract.png in Resources */,
 				79305AF81B0394F900C9AA87 /* del.png in Resources */,
 				79305AF91B0394F900C9AA87 /* save.png in Resources */,
 				7960AFA71B033D83006928C7 /* Main.storyboard in Resources */,

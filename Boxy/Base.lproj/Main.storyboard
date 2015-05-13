@@ -663,10 +663,12 @@
                                 <toolbarItem implicitItemIdentifier="2EF39310-C72C-4AB5-83C4-B608B9D9F8AD" label="Remove" paletteLabel="Remove" tag="-1" image="del" id="pxW-tT-uCF"/>
                                 <toolbarItem implicitItemIdentifier="6CF4F905-FFFF-4694-8111-A8A024CB5BFC" label="Save" paletteLabel="Save" tag="-1" image="save" id="hc0-g5-nKR"/>
                                 <toolbarItem implicitItemIdentifier="59A035C5-03FE-45F3-9431-92B79805DAA1" label="Mount" paletteLabel="Mount" tag="-1" image="mount" id="Kkc-sD-Ogt"/>
+                                <toolbarItem implicitItemIdentifier="4C0C6005-DB06-47C9-9D59-83378DA1EFA9" label="Extract" paletteLabel="Extract" tag="-1" image="extract" id="deE-cA-mBu"/>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="UGZ-Ha-kiZ"/>
                                 <toolbarItem reference="pxW-tT-uCF"/>
+                                <toolbarItem reference="deE-cA-mBu"/>
                                 <toolbarItem reference="zX9-0b-YeO"/>
                                 <toolbarItem reference="Kkc-sD-Ogt"/>
                                 <toolbarItem reference="ea8-x9-wyh"/>
@@ -761,6 +763,7 @@
     <resources>
         <image name="add" width="128" height="128"/>
         <image name="del" width="128" height="128"/>
+        <image name="extract" width="128" height="128"/>
         <image name="mount" width="128" height="128"/>
         <image name="save" width="128" height="128"/>
     </resources>

@@ -51,6 +51,31 @@ class ViewController: NSViewController {
         self.mountItem!.action = nil
     }
     
+    func extractButton(sender: AnyObject) {
+        var files: [Entry] = []
+        
+        var i = 0
+        while i < self.doc!.entries.count {
+            if table.selectedRowIndexes.containsIndex(i) {
+                files.append(self.doc!.entries[i])
+            }
+            i += 1
+        }
+        
+        // Create and configure the panel.
+        let openPanel = NSOpenPanel()
+        openPanel.canChooseDirectories = true
+        openPanel.canCreateDirectories = true
+        openPanel.beginSheetModalForWindow(self.view.window!, completionHandler: { (result) -> Void in
+            if result == NSFileHandlingPanelOKButton {
+                let url = openPanel.URL!
+                files.map({ e -> Void in
+                    e.data.writeToFile(url.path! + "/" + e.fileName, atomically: false)
+                })
+            }
+        })
+    }
+    
     func mountButton(sender: AnyObject) {
         self.doc!.extractTo("/Users/aluxian/tmp/" + self.doc!.displayName)
         
@@ -82,6 +107,7 @@ class ViewController: NSViewController {
     var removeItem: NSToolbarItem? = nil
     var mountItem: NSToolbarItem? = nil
     var saveItem: NSToolbarItem? = nil
+    var extractItem: NSToolbarItem? = nil
     
     override func viewDidAppear() {
         let win = self.view.window!
@@ -94,11 +120,13 @@ class ViewController: NSViewController {
         
         addItem = items[0]
         removeItem = items[1]
-        mountItem = items[3]
-        saveItem = items[5]
+        extractItem = items[2]
+        mountItem = items[4]
+        saveItem = items[6]
         
         addItem!.action = "addButton:"
         removeItem!.action = "removeButton:"
+        extractItem!.action = "extractButton:"
         mountItem!.action = "mountButton:"
         //saveItem!.action = "saveButton:"
     }

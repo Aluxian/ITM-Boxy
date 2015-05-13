@@ -66,7 +66,6 @@ class Document: NSDocument, NSTableViewDataSource {
     override func readFromData(data: NSData, ofType typeName: String, error outError: NSErrorPointer) -> Bool {
         let archive = ZZArchive(data: data, error: outError)
         if (outError != nil && outError.memory != nil) {
-            print("0")
             println(outError.memory)
         }
         
@@ -87,7 +86,6 @@ class Document: NSDocument, NSTableViewDataSource {
         
         let archive = ZZArchive(data: data, options: ["ZZOpenOptionsCreateIfMissingKey": true], error: outError)
         if (outError != nil && outError.memory != nil) {
-            print("1")
             println(outError.memory)
         }
         
@@ -97,7 +95,6 @@ class Document: NSDocument, NSTableViewDataSource {
             })
         }), error: outError)
         if (outError != nil && outError.memory != nil) {
-            print("2")
             println(outError.memory)
         }
         
