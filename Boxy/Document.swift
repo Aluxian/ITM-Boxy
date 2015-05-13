@@ -9,6 +9,8 @@
 import Cocoa
 
 class Document: NSDocument {
+    
+    
 
     override init() {
         super.init()
@@ -30,18 +32,23 @@ class Document: NSDocument {
         let windowController = storyboard.instantiateControllerWithIdentifier("Document Window Controller") as! NSWindowController
         self.addWindowController(windowController)
     }
-
-    override func dataOfType(typeName: String, error outError: NSErrorPointer) -> NSData? {
-        // Insert code here to write your document to data of the specified type. If outError != nil, ensure that you create and set an appropriate error when returning nil.
-        // You can also choose to override fileWrapperOfType:error:, writeToURL:ofType:error:, or writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-        outError.memory = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
-        return nil
-    }
+    
+    
 
     override func readFromData(data: NSData, ofType typeName: String, error outError: NSErrorPointer) -> Bool {
         // Insert code here to read your document from the given data of the specified type. If outError != nil, ensure that you create and set an appropriate error when returning false.
         // You can also choose to override readFromFileWrapper:ofType:error: or readFromURL:ofType:error: instead.
         // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
+        
+        /*let oldArchive = ZZArchive(URL: NSURL(fileURLWithPath: filename), error: outError)
+            error:nil];
+        ZZArchiveEntry* firstArchiveEntry = oldArchive.entries[0];
+        NSLog(@"The first entry's uncompressed size is %lu bytes.", (unsigned long)firstArchiveEntry.uncompressedSize);
+        NSLog(@"The first entry's data is: %@.", [firstArchiveEntry newDataWithError:nil]);*/
+        
+        println(typeName)
+        println(data)
+        
         outError.memory = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
         return false
     }

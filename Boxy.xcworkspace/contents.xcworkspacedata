@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:zipzap/zipzap.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "container:Boxy.xcodeproj">
    </FileRef>
 </Workspace>
