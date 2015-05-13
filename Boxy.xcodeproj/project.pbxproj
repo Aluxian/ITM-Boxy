@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79305AF71B0394F900C9AA87 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 79305AF41B0394F900C9AA87 /* add.png */; };
+		79305AF81B0394F900C9AA87 /* del.png in Resources */ = {isa = PBXBuildFile; fileRef = 79305AF51B0394F900C9AA87 /* del.png */; };
+		79305AF91B0394F900C9AA87 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 79305AF61B0394F900C9AA87 /* save.png */; };
+		79305AFB1B0397B400C9AA87 /* mount.png in Resources */ = {isa = PBXBuildFile; fileRef = 79305AFA1B0397B400C9AA87 /* mount.png */; };
 		7960AF9E1B033D83006928C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960AF9D1B033D83006928C7 /* AppDelegate.swift */; };
 		7960AFA01B033D83006928C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960AF9F1B033D83006928C7 /* ViewController.swift */; };
-		7960AFA21B033D83006928C7 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960AFA11B033D83006928C7 /* Document.swift */; };
 		7960AFA41B033D83006928C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7960AFA31B033D83006928C7 /* Images.xcassets */; };
 		7960AFA71B033D83006928C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7960AFA51B033D83006928C7 /* Main.storyboard */; };
 		7960AFB31B033D83006928C7 /* BoxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960AFB21B033D83006928C7 /* BoxyTests.swift */; };
@@ -18,6 +21,7 @@
 		79F8A7451B034FE600C892D2 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F8A7441B034FE600C892D2 /* ApplicationServices.framework */; };
 		79F8A7471B034FEC00C892D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F8A7461B034FEC00C892D2 /* Foundation.framework */; };
 		79F8A7491B034FF300C892D2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F8A7481B034FF300C892D2 /* libz.dylib */; };
+		79F8A78E1B035B7E00C892D2 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F8A78D1B035B7E00C892D2 /* Document.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,11 +35,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		79305AF41B0394F900C9AA87 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		79305AF51B0394F900C9AA87 /* del.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = del.png; sourceTree = "<group>"; };
+		79305AF61B0394F900C9AA87 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
+		79305AFA1B0397B400C9AA87 /* mount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mount.png; sourceTree = "<group>"; };
 		7960AF981B033D83006928C7 /* Boxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7960AF9C1B033D83006928C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7960AF9D1B033D83006928C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7960AF9F1B033D83006928C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7960AFA11B033D83006928C7 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		7960AFA31B033D83006928C7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7960AFA61B033D83006928C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7960AFAC1B033D83006928C7 /* BoxyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoxyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +54,7 @@
 		79F8A7441B034FE600C892D2 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		79F8A7461B034FEC00C892D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		79F8A7481B034FF300C892D2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		79F8A78D1B035B7E00C892D2 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +107,7 @@
 				7960AFBE1B033EB3006928C7 /* Assets */,
 				7960AF9D1B033D83006928C7 /* AppDelegate.swift */,
 				7960AF9F1B033D83006928C7 /* ViewController.swift */,
-				7960AFA11B033D83006928C7 /* Document.swift */,
+				79F8A78D1B035B7E00C892D2 /* Document.swift */,
 				79F8A7431B034E2400C892D2 /* BridgingHeader.h */,
 				7960AFA31B033D83006928C7 /* Images.xcassets */,
 				7960AFA51B033D83006928C7 /* Main.storyboard */,
@@ -136,6 +144,10 @@
 		7960AFBE1B033EB3006928C7 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				79305AFA1B0397B400C9AA87 /* mount.png */,
+				79305AF41B0394F900C9AA87 /* add.png */,
+				79305AF51B0394F900C9AA87 /* del.png */,
+				79305AF61B0394F900C9AA87 /* save.png */,
 				7960AFBC1B033EAF006928C7 /* filetypeicon.icns */,
 			);
 			name = Assets;
@@ -222,8 +234,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7960AFA41B033D83006928C7 /* Images.xcassets in Resources */,
+				79305AF81B0394F900C9AA87 /* del.png in Resources */,
+				79305AF91B0394F900C9AA87 /* save.png in Resources */,
 				7960AFA71B033D83006928C7 /* Main.storyboard in Resources */,
+				79305AFB1B0397B400C9AA87 /* mount.png in Resources */,
 				7960AFBD1B033EAF006928C7 /* filetypeicon.icns in Resources */,
+				79305AF71B0394F900C9AA87 /* add.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +259,7 @@
 			files = (
 				7960AFA01B033D83006928C7 /* ViewController.swift in Sources */,
 				7960AF9E1B033D83006928C7 /* AppDelegate.swift in Sources */,
-				7960AFA21B033D83006928C7 /* Document.swift in Sources */,
+				79F8A78E1B035B7E00C892D2 /* Document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

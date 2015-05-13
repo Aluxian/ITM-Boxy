@@ -644,7 +644,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Boxy" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="-125"/>
+            <point key="canvasLocation" x="75" y="-142"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -659,17 +659,18 @@
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="zX9-0b-YeO"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="ea8-x9-wyh"/>
-                                <toolbarItem implicitItemIdentifier="57810C2C-1BC7-4105-88DD-F4050897172C" label="Add" paletteLabel="Add" tag="-1" id="UGZ-Ha-kiZ"/>
-                                <toolbarItem implicitItemIdentifier="2EF39310-C72C-4AB5-83C4-B608B9D9F8AD" label="Remove" paletteLabel="Remove" tag="-1" id="pxW-tT-uCF"/>
-                                <toolbarItem implicitItemIdentifier="6CF4F905-FFFF-4694-8111-A8A024CB5BFC" label="Rename" paletteLabel="Rename" tag="-1" id="hc0-g5-nKR"/>
-                                <toolbarItem implicitItemIdentifier="59A035C5-03FE-45F3-9431-92B79805DAA1" label="Move" paletteLabel="Move" tag="-1" id="Kkc-sD-Ogt"/>
+                                <toolbarItem implicitItemIdentifier="57810C2C-1BC7-4105-88DD-F4050897172C" label="Add" paletteLabel="Add" tag="-1" image="add" id="UGZ-Ha-kiZ"/>
+                                <toolbarItem implicitItemIdentifier="2EF39310-C72C-4AB5-83C4-B608B9D9F8AD" label="Remove" paletteLabel="Remove" tag="-1" image="del" id="pxW-tT-uCF"/>
+                                <toolbarItem implicitItemIdentifier="6CF4F905-FFFF-4694-8111-A8A024CB5BFC" label="Save" paletteLabel="Save" tag="-1" image="save" id="hc0-g5-nKR"/>
+                                <toolbarItem implicitItemIdentifier="59A035C5-03FE-45F3-9431-92B79805DAA1" label="Mount" paletteLabel="Mount" tag="-1" image="mount" id="Kkc-sD-Ogt"/>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="UGZ-Ha-kiZ"/>
                                 <toolbarItem reference="pxW-tT-uCF"/>
-                                <toolbarItem reference="hc0-g5-nKR"/>
+                                <toolbarItem reference="zX9-0b-YeO"/>
                                 <toolbarItem reference="Kkc-sD-Ogt"/>
                                 <toolbarItem reference="ea8-x9-wyh"/>
+                                <toolbarItem reference="hc0-g5-nKR"/>
                             </defaultToolbarItems>
                         </toolbar>
                     </window>
@@ -688,11 +689,79 @@
                     <view key="view" id="ERx-hH-rdd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ra-4f-i6l">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                                <clipView key="contentView" misplaced="YES" id="QjS-7l-Fi9">
+                                    <rect key="frame" x="1" y="17" width="238" height="117"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="L04-zh-XvT" id="hDH-g9-ZcI">
+                                            <rect key="frame" x="0.0" y="0.0" width="598" height="19"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn identifier="name" width="429.41796875" minWidth="40" maxWidth="1000" id="FWY-p5-AOt">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Name">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="Qbj-Tn-GOE">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                </tableColumn>
+                                                <tableColumn identifier="size" width="162.5" minWidth="40" maxWidth="1000" id="9vS-dc-ADh">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Size">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="2hO-2N-g4H">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                </tableColumn>
+                                            </tableColumns>
+                                        </tableView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="mog-fp-mBy">
+                                    <rect key="frame" x="1" y="117.50386214256287" width="237" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="dHh-01-GpE">
+                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <tableHeaderView key="headerView" id="L04-zh-XvT">
+                                    <rect key="frame" x="0.0" y="0.0" width="238" height="17"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableHeaderView>
+                            </scrollView>
+                        </subviews>
                     </view>
+                    <connections>
+                        <outlet property="table" destination="hDH-g9-ZcI" id="2NQ-OI-qFb"/>
+                    </connections>
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="821"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add" width="128" height="128"/>
+        <image name="del" width="128" height="128"/>
+        <image name="mount" width="128" height="128"/>
+        <image name="save" width="128" height="128"/>
+    </resources>
 </document>

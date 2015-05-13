@@ -8,22 +8,52 @@
 
 import Cocoa
 
-class Document: NSDocument {
+struct Entry {
+    let fileName: String
+    let data: NSData
+    let size: UInt
     
+    init(filename: String, data: NSData, size: UInt) {
+        self.fileName = filename
+        self.data = data
+        self.size = size
+    }
     
+    init(filename: String, data: NSData) {
+        self.fileName = filename
+        self.data = data
+        self.size = 0
+    }
+}
+
+class Document: NSDocument, NSTableViewDataSource {
+    
+    var entries: [Entry] = []
 
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
     }
+    
+    func extractTo(p: String) {
+        let data = dataOfType("Box Image", error: nil)
+        let archive = ZZArchive(data: data, error: nil)
+        
+        let fileManager = NSFileManager()
+        let url = NSURL(fileURLWithPath: p, isDirectory: true)!
+        fileManager.createDirectoryAtURL(url, withIntermediateDirectories: true, attributes: nil, error: nil)
+        
+        for _entry in archive.entries {
+            let entry = _entry as! ZZArchiveEntry
+            let fn = entry.fileName
+            let target = NSURL(fileURLWithPath: url.path! + "/" + fn)
+            entry.newDataWithError(nil).writeToURL(target!, atomically: false)
+        }
+    }
 
     override func windowControllerDidLoadNib(aController: NSWindowController) {
         super.windowControllerDidLoadNib(aController)
         // Add any code here that needs to be executed once the windowController has loaded the document's window.
-    }
-
-    override class func autosavesInPlace() -> Bool {
-        return true
     }
 
     override func makeWindowControllers() {
@@ -33,24 +63,60 @@ class Document: NSDocument {
         self.addWindowController(windowController)
     }
     
-    
-
     override func readFromData(data: NSData, ofType typeName: String, error outError: NSErrorPointer) -> Bool {
-        // Insert code here to read your document from the given data of the specified type. If outError != nil, ensure that you create and set an appropriate error when returning false.
-        // You can also choose to override readFromFileWrapper:ofType:error: or readFromURL:ofType:error: instead.
-        // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
+        let archive = ZZArchive(data: data, error: outError)
+        if (outError != nil && outError.memory != nil) {
+            print("0")
+            println(outError.memory)
+        }
         
-        /*let oldArchive = ZZArchive(URL: NSURL(fileURLWithPath: filename), error: outError)
-            error:nil];
-        ZZArchiveEntry* firstArchiveEntry = oldArchive.entries[0];
-        NSLog(@"The first entry's uncompressed size is %lu bytes.", (unsigned long)firstArchiveEntry.uncompressedSize);
-        NSLog(@"The first entry's data is: %@.", [firstArchiveEntry newDataWithError:nil]);*/
+        if var _entries = archive?.entries {
+            var entrs  = _entries as! [ZZArchiveEntry]
+            for e in entrs {
+                entries.append(Entry(filename: e.fileName, data: e.newDataWithError(outError), size: e.compressedSize))
+            }
+        } else {
+            entries = []
+        }
         
-        println(typeName)
-        println(data)
-        
-        outError.memory = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
-        return false
+        return true
     }
-
+    
+    override func dataOfType(typeName: String, error outError: NSErrorPointer) -> NSData? {
+        let data = NSMutableData()
+        
+        let archive = ZZArchive(data: data, options: ["ZZOpenOptionsCreateIfMissingKey": true], error: outError)
+        if (outError != nil && outError.memory != nil) {
+            print("1")
+            println(outError.memory)
+        }
+        
+        archive?.updateEntries(entries.map({ e -> ZZArchiveEntry in
+            return ZZArchiveEntry(fileName: e.fileName, compress: true, dataBlock: { (error) -> NSData! in
+                return e.data
+            })
+        }), error: outError)
+        if (outError != nil && outError.memory != nil) {
+            print("2")
+            println(outError.memory)
+        }
+        
+        return data
+    }
+    
+    func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+        return entries.count
+    }
+    
+    func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject? {
+        if "size" == tableColumn?.identifier {
+            return entries[row].size
+        }
+        
+        if "name" == tableColumn?.identifier {
+            return entries[row].fileName
+        }
+        
+        return nil
+    }
 }
