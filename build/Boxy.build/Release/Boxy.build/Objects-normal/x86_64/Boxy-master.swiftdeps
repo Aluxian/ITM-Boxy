@@ -1,0 +1,6 @@
+version: "Apple Swift version 1.2 (swiftlang-602.0.49.6 clang-602.0.49)"
+options: "26f2febcbbe7534bcbdd416e474dcc7a"
+inputs: 
+- "/Users/aluxian/Projects/Boxy2/Boxy/ViewController.swift"
+- "/Users/aluxian/Projects/Boxy2/Boxy/AppDelegate.swift"
+- "/Users/aluxian/Projects/Boxy2/Boxy/Document.swift"
